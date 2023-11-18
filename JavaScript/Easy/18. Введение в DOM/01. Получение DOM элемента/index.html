@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Получение DOM элемента</title>
+  </head>
+  <body>
+    <!-- Запишите ссылку на каждый из абзацев в отдельную переменную и выведите содержимое каждой из этих переменных в консоль. -->
+
+    <p id="elem1">1</p>
+    <p id="elem2">2</p>
+    <p id="elem3">3</p>
+
+    <script>
+      let elem1 = document.querySelector("#elem1");
+      let elem2 = document.querySelector("#elem2");
+      let elem3 = document.querySelector("#elem3");
+      console.log(elem1);
+      console.log(elem2);
+      console.log(elem3);
+    </script>
+  </body>
+</html>

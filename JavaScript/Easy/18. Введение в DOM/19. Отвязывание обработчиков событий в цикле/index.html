@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отвязывание обработчиков событий в цикле</title>
+</head>
+<body>
+    <p class="elem">1</p>
+    <p class="elem">2</p>
+    <p class="elem">3</p>
+    <p class="elem">4</p>
+    <script>
+        // Даны абзацы. По нажатию на любой из абзацев добавьте
+        // ему в конец восклицательный знак. Сделайте так, чтобы
+        // это добавление происходило лишь по первому нажатию.
+        function func () {
+            this.textContent += '!';
+            this.removeEventListener('click', func);
+        }
+        let elems = document.querySelectorAll('.elem');
+        for (let elem of elems) {
+            elem.addEventListener('click', func);
+        }
+    </script>
+</body>
+</html>

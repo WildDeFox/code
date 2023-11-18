@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Обработчики разных событий</title>
+  </head>
+  <body>
+    <button class="button">Нажми на меня!</button>
+
+    <script>
+      let button = document.querySelector(".button");
+      // Дана кнопка. По двойному клику по ней выведите какое-нибудь сообщение.
+      button.addEventListener("dblclick", function () {
+        console.log("На меня дважды нажали!!!");
+      });
+
+      // Дана кнопка. По наведению на нее выведите какое-нибудь сообщение.
+      button.addEventListener("mouseover", function () {
+        console.log("О, на меня навели мышкой!");
+      });
+
+      // Дана кнопка. По уходу курсора с нее выведите какое-нибудь сообщение.
+      button.addEventListener("mouseout", function () {
+        console.log("О нет, я потеряла фокус...");
+      });
+    </script>
+  </body>
+</html>

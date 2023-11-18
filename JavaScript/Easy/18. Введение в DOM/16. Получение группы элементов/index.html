@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Получение группы элементов</title>
+  </head>
+  <body>
+    <div>
+      <p class="elem">Привет</p>
+      <p class="elem">Как дела?</p>
+      <p class="elem">Как настроение?</p>
+      <p class="elem">Чем занимаешься?</p>
+      <p class="elem">Какой прекрасный день</p>
+      <button class="button">Заменить...</button>
+      <button class="button1">Добавить</button>
+    </div>
+    <script>
+      // По нажатию на кнопку найдите все абзацы, переберите их циклом
+      // и установите текст каждого абзаца в значение 'text'.
+      let button = document.querySelector(".button");
+      button.addEventListener("click", function () {
+        let elems = document.querySelectorAll(".elem");
+        for (let elem of elems) {
+          elem.textContent = "text";
+        }
+      });
+
+      // Даны абзацы с текстом и кнопка. По нажатию на кнопку
+      // запишите в конец текста каждого абзаца его порядковый номер.
+      let button1 = document.querySelector('.button1');
+      button1.addEventListener('click', function () {
+        let elems = document.querySelectorAll('.elem');
+        for (let i = 0; i < elems.length; i++) {
+            elems[i].textContent += '!';
+        }
+      })
+    </script>
+  </body>
+</html>

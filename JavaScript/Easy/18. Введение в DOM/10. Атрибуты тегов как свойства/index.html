@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Атрибуты тегов как свойства</title>
+  </head>
+  <body>
+    <div>
+      <input id="elem1" type="email" />
+      <button class="button1">Кнопка</button>
+    </div>
+
+    <div>
+      <input id="elem2" type="email" />
+      <button class="button2">Кнопка</button>
+    </div>
+
+    <div>
+      <a href="https://itechnoform.ru" class="link3">Хороший сайт!</a>
+      <p class="elem3"></p>
+      <button class="button3">Нажми на меня!</button>
+    </div>
+    <div>
+      <img src="img/code.png" alt="Картинка" class="img4" />
+      <p class="elem4"></p>
+      <button class="button4">Кнопка</button>
+      <button class="button4_1">Кнопка №2</button>
+    </div>
+    <script>
+      // По нажатию на кнопку выведите на экран содержимое атрибута type указанного выше инпута.
+      let input1 = document.querySelector("#elem1");
+      let button1 = document.querySelector(".button1");
+      button1.addEventListener("click", function () {
+        console.log(input1.type);
+      });
+
+      // По нажатию на кнопку запишите в атрибут type значение submit.
+      let input2 = document.querySelector("#elem2");
+      let button2 = document.querySelector(".button2");
+      button2.addEventListener("click", function () {
+        input2.type = "submit";
+      });
+
+      // Пусть у вас есть ссылка в виде тега a, кнопка и абзац.
+      // По нажатию на кнопку выведите в абзац содержимое атрибута href ссылки.
+      let link3 = document.querySelector(".link3");
+      let elem3 = document.querySelector(".elem3");
+      let button3 = document.querySelector(".button3");
+      button3.addEventListener("click", function () {
+        elem3.textContent = link3.href;
+        // По нажатию на кнопку добавьте в конец текста
+        // ссылки содержимое ее атрибута href в круглых скобках.
+        link3.textContent = link3.textContent + ` (${link3.href})`;
+      });
+
+      // Пусть у вас есть картинка. Разместите ее на странице с помощью тега img.
+      // Пусть даны также кнопка и абзац. Сделайте так, чтобы по клику на кнопку
+      // в абзац записался путь к картинки из ее атрибута src.
+      let img4 = document.querySelector(".img4");
+      let elem4 = document.querySelector(".elem4");
+      let button4 = document.querySelector(".button4");
+      let button4_1 = document.querySelector('.button4_1');
+      button4.addEventListener("click", function () {
+        elem4.textContent = img4.src;
+        // По нажатию на кнопку в атрибут width запишите значение 300.
+        img4.width = '400';
+      });
+      // Пусть в атрибуте width задана некоторая ширина.
+      // Сделайте кнопку, по нажатию на которую ширина картинки будет увеличиваться в 2 раза.
+      button4_1.addEventListener('click', function() {
+        img4.width = +img4.width * 2;
+      })
+    </script>
+  </body>
+</html>

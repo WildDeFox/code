@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Исключения при работе с атрибутами</title>
+  </head>
+  <body>
+    <div id="elem1" class="content no-gap"></div>
+    <button class="button1">Кнопка</button>
+    <script>
+      // По нажатию на кнопку прочитайте и выведите
+      // на экран значение атрибута class нашего дива.
+      let elem1 = document.querySelector("#elem1");
+      let button1 = document.querySelector(".button1");
+      button1.addEventListener("click", function () {
+        console.log(elem1.className);
+        // По нажатию на кнопку запишите в атрибут class нашего дива какой-нибудь класс.
+        elem1.className = 'new-style';
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Добавление обработчиков в цикле</title>
+  </head>
+  <body>
+    <div>
+      <input type="text" class="input" />
+      <input type="text" class="input" />
+      <input type="text" class="input" />
+    </div>
+
+    <div>
+      <p class="elem">2</p>
+      <p class="elem">4</p>
+      <p class="elem">5</p>
+      <p class="elem">6</p>
+      <p class="elem">7</p>
+    </div>
+
+    <script>
+      function func() {
+        this.value = Number(this.value) + 1;
+      }
+      function func1() {
+        this.textContent = this.textContent ** 2;
+      }
+      // Сделайте так, чтобы по потери фокуса в любом из
+      // наших инпутов выполнялась приведенная выше функция.
+      let inputs = document.querySelectorAll(".input");
+      for (let input of inputs) {
+        input.addEventListener("blur", func);
+      }
+
+      // Даны абзацы с числами. Сделайте так, чтобы по клику
+      // на любой абзац его число в нем возводилось в квадрат.
+      let elems = document.querySelectorAll('.elem');
+      for (let elem of elems) {
+        elem.addEventListener('click', func1);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Работа с HTML кодом элементов</title>
+  </head>
+  <body>
+    <div>
+      <p class="elem1">Hello World!</p>
+      <button class="button1">Нажми на меня</button>
+    </div>
+    <script>
+      // Дан абзац и кнопка. По клику на кнопку
+      // прочитайте HTML код абзаца и выведите его в консоль.
+      let elem1 = document.querySelector(".elem1");
+      let button1 = document.querySelector(".button1");
+      button1.addEventListener("click", function () {
+        console.log(elem1.innerHTML);
+      });
+
+      // По клику на кнопку запишите в абзац новый текст так, чтобы он был жирным.
+      button1.addEventListener("click", function () {
+        elem1.innerHTML = "<b>Hello World!</b>";
+      });
+    </script>
+  </body>
+</html>

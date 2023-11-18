@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Несколько обработчиков одного события</title>
+  </head>
+  <body>
+    <p id="elem">text</p>
+    <script>
+      function func1() {
+        console.log("1");
+      }
+      function func2() {
+        console.log("2");
+      }
+      function func3() {
+        console.log("3");
+      }
+
+      // Привяжите все эти функции к нашему абзацу.
+      let elem = document.querySelector("#elem");
+      elem.addEventListener("click", func1);
+      elem.addEventListener("click", func2);
+      elem.addEventListener("click", func3);
+    </script>
+  </body>
+</html>

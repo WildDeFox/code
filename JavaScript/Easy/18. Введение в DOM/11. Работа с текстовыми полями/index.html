@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Работа с текстовыми полями</title>
+  </head>
+  <body>
+    <div>
+      <input type="text" class="input1" />
+      <button class="button1">Кнопка</button>
+    </div>
+
+    <div>
+      <input type="text" class="input2" />
+      <p class="elem2"></p>
+      <button class="button2">Кнопка</button>
+    </div>
+
+    <div>
+      <input type="text" class="input3_1" />
+      <input type="text" class="input3_2" />
+      <button class="button3">Магия</button>
+    </div>
+
+    <script>
+      // По нажатию на кнопку запишите в инпут какой-нибудь текст.
+      let input1 = document.querySelector(".input1");
+      let button1 = document.querySelector(".button1");
+      button1.addEventListener("click", function () {
+        input1.value = "Какой-то текст...";
+      });
+
+      // По нажатию на кнопку запишите в абзац текст из инпута.
+      let input2 = document.querySelector(".input2");
+      let elem2 = document.querySelector(".elem2");
+      let button2 = document.querySelector(".button2");
+      button2.addEventListener("click", function () {
+        elem2.textContent = input2.value;
+      });
+
+      // В первый инпут пользователем вводится число.
+      // По нажатию на кнопку запишите во второй инпут квадрат введенного числа.
+      let input3_1 = document.querySelector(".input3_1");
+      let input3_2 = document.querySelector(".input3_2");
+      button3 = document.querySelector(".button3");
+      button3.addEventListener("click", function () {
+        input3_2.value = Math.sqrt(+input3_1.value);
+      });
+    </script>
+  </body>
+</html>
