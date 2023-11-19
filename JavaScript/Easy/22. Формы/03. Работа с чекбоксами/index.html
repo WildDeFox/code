@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Работа с чекбоксами</title>
+  </head>
+  <body>
+    <input type="checkbox" name="" id="elem" />
+    <p class="elem"></p>
+    <button class="button">Отметить</button>
+    <button class="button1">НЕ отметить</button>
+    <script>
+      // Дан чекбокс и две кнопки.
+      // По нажатию на первую кнопку установите чекбокс в отмеченное состояние,
+      // а по нажатию на вторую - в неотмеченное.
+      let input = document.querySelector("#elem");
+      let button = document.querySelector(".button");
+      let button1 = document.querySelector(".button1");
+      let elem = document.querySelector(".elem");
+      button.addEventListener("click", function () {
+        input.checked = true;
+        elem.textContent = "Привет!";
+      });
+      button1.addEventListener("click", function () {
+        input.checked = false;
+        elem.textContent = "Пока...";
+      });
+    </script>
+  </body>
+</html>

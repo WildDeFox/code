@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Методы focus и blur</title>
+</head>
+<body>
+    <input type="text" class="input1">
+    <input type="text" class="input2">
+    <script>
+        // Даны два инпута. Сделайте так, чтобы после ввода двух
+        // символов фокус ввода переходил ко второму инпуту,
+        // а после ввода двух символов в этот инпут - фокус из него убирался.
+        let input1 = document.querySelector('.input1');
+        let input2 = document.querySelector('.input2');
+        input1.addEventListener('input', function () {
+            if (input1.value == 2) {
+                input2.focus();
+            }
+        });
+        input2.addEventListener('input', function () {
+            if (input2.value == 2) {
+                input2.blur();
+            }
+        })
+    </script>
+</body>
+</html>

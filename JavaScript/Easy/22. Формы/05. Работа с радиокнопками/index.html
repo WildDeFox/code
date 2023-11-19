@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Работа с радиокнопками</title>
+</head>
+<body>
+    <input type="radio" name="zzz" class="input" value="1">
+    <input type="radio" name="zzz" class="input" value="2" checked>
+    <input type="radio" name="zzz" class="input" value="3">
+    <p class="elem"></p>
+    <button class="button">Проверить</button>
+    <script>
+        // Даны 3 радиокнопки, абзац и кнопка.
+        //  По клику на кнопку выведите в абзац value отмеченной радиокнопки.
+        let inputs = document.querySelectorAll('.input');
+        let elem = document.querySelector('.elem');
+        let button = document.querySelector('.button');
+
+        button.addEventListener('click', function () {
+            for (let input of inputs) {
+                if (input.checked) {
+                    elem.textContent = input.value;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

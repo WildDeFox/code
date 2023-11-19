@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Событие input</title>
+</head>
+<body>
+    <input type="text" class="input">
+    <p class="elem"></p>
+    <script>
+        // Дан инпут. Пусть в него вводится текст.
+        // Как только длина текста достигнет 5-ти, выведите на экран сообщение об этом.
+        let input = document.querySelector('.input');
+        let elem = document.querySelector('.elem');
+        input.addEventListener('input', function() {
+            if (input.value.length == 5) {
+                elem.textContent = 'Длина текста равна пяти';
+            } else {
+                elem.textContent = '';
+            }
+        })
+    </script>
+</body>
+</html>
