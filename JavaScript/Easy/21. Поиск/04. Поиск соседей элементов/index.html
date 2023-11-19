@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поиск соседей элементов</title>
+</head>
+<body>
+    <ul>
+        <li>text1</li>
+        <li>text2</li>
+        <li id="elem">tex3</li>
+        <li>tex4</li>
+        <li>tex5</li>
+    </ul>
+    <script>
+        // Найдите его соседа сверху и добавьте ему в конец текст '!'.
+        let elem = document.querySelector('#elem');
+        elem.previousElementSibling.textContent += '!';
+
+        // Найдите его соседа снизу и добавьте ему в конец текст '!'.
+        elem.nextElementSibling.textContent += '!';
+
+        // Найдите его соседа снизу его соседа снизу
+        // (следующий элемент за соседним) и добавьте ему в конец текст '!'.
+        elem.nextElementSibling.nextElementSibling.textContent += '!';
+
+        // Поменяйте местами текст его соседа сверху и текст его соседа снизу.
+        [elem.previousElementSibling.textContent, elem.nextElementSibling.textContent] = [elem.nextElementSibling.textContent, elem.previousElementSibling.textContent]
+    </script>
+</body>
+</html>

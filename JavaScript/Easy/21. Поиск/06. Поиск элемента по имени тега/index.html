@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Поиск элемента по имени тега</title>
+  </head>
+  <body>
+    <ul>
+      <li>text</li>
+      <li>text</li>
+      <li>text</li>
+      <li>text</li>
+      <li>text</li>
+    </ul>
+    <script>
+        // Получите все теги li по имени тега и сделайте их текст красного цвета.
+        let lis = document.getElementsByTagName('li');
+        for (let li of lis) {
+            li.style.color = 'red';
+        }
+    </script>
+  </body>
+</html>

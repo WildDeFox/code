@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Нахождение потомков элементов</title>
+</head>
+<body>
+    <ul id="elem">
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+    </ul>
+    <script>
+        // Найдите первого потомка этого элемента и сделайте его текст красного цвета.
+        let parent = document.querySelector("#elem");
+        parent.firstElementChild.style.color = 'red';
+       
+
+        // Найдите последнего потомка этого элемента и сделайте его текст красного цвета.
+        parent.lastElementChild.style.color = 'red';
+
+        // Найдите всех потомков этого элемента и добавьте им в конец текст '!'.
+        let elems = parent.children;
+        for (let elem of elems) {
+            elem.textContent += '!'
+        }
+    </script>
+</body>
+</html>

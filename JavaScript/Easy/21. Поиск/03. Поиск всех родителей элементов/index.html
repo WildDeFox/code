@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поиск всех родителей элементов</title>
+</head>
+<body>
+    <header>
+        <div>
+            <p>
+                <span id="elem"></span>
+            </p>
+        </div>
+    </header>
+    <script>
+        // Найдите ближайшего родителя этого элемента, являющегося тегом div.
+        let elem = document.querySelector('#elem');
+        console.log(elem.closest('div'));
+    </script>
+</body>
+</html>

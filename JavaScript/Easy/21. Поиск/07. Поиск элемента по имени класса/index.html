@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Поиск элемента по имени класса</title>
+  </head>
+  <body>
+    <p class="www">elem 1</p>
+    <p class="www">elem 2</p>
+    <p class="www">elem 3</p>
+    <script>
+        // Получите эти элементы по имени класса и сделайте их текст красного цвета.
+        let ps = document.getElementsByClassName('www');
+        for (let p of ps) {
+            p.style.color = 'red';
+        }
+    </script>
+  </body>
+</html>
