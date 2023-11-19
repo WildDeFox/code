@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Работа с выпадающими списками</title>
+</head>
+<body>
+    <select class="select">
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+    </select>
+    <button class="button">Нажимай</button>
+    <script>
+        // Дан селект, абзац и кнопка.
+        // По клику на кнопку выведите текст выбранного пункта списка в абзац.
+        let select = document.querySelector('.select');
+        let button = document.querySelector('.button');
+        button.addEventListener('click', function () {
+            console.log(select.value);
+        })
+        
+    </script>
+</body>
+</html>
