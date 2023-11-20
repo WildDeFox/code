@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Универсальное делегирование событий</title>
+  </head>
+  <body>
+    <ul>
+      <li>item</li>
+      <li>item</li>
+      <li>item</li>
+      <li>item</li>
+      <li>item</li>
+    </ul>
+
+    <button>add</button>
+    <script>
+      let button = document.querySelector("button");
+      let list = document.querySelector("ul");
+      let items = document.querySelectorAll("li");
+
+      button.addEventListener("click", function () {
+        let item = document.createElement("li");
+        item.textContent = "item";
+        list.appendChild(item);
+      });
+
+      list.addEventListener("click", function (event) {
+        let li = event.target.closest('li');
+
+        if (li) {
+            li.textContent = li.textContent + '!';
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Координаты события</title>
+</head>
+<body>
+    <div id="elem" style="height: 100vh;">0 : 0</div>
+    <script>
+        let elem = document.querySelector('#elem');
+        elem.addEventListener('mousemove', function(event) {
+            elem.innerHTML = event.clientX + ' : ' + event.clientY;
+        })
+    </script>
+</body>
+</html>
