@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Контекст через переменную</title>
+  </head>
+  <body>
+    <input id="elem" value="3" />
+    <script>
+      let elem = document.querySelector("#elem");
+      elem.addEventListener("blur", func);
+
+      function func() {
+        let self = this; // исправление потери контекста
+        alert(square());
+        function square() {
+          return +self.value * +self.value;
+        }
+      }
+    </script>
+  </body>
+</html>

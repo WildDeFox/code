@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Контекст через стрелочную функцию</title>
+  </head>
+  <body>
+    <input id="elem" value="3" />
+    <script>
+      let elem = document.querySelector("#elem");
+      elem.addEventListener("blur", parent);
+
+      function parent() {
+        console.log(this.value); // выведет 'text'
+
+        let child = () => {
+          console.log(this.value); // выведет 'text'
+        };
+        child();
+      }
+    </script>
+  </body>
+</html>

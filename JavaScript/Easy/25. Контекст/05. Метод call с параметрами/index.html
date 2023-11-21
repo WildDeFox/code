@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Метод call с параметрами</title>
+  </head>
+  <body>
+    <input id="elem" value="hello" />
+    <script>
+      let elem = document.querySelector("#elem");
+
+      function func(surname, name) {
+        console.log(this.value + ", " + name + " " + surname);
+      }
+
+      func.call(elem, 'John', 'Smit'); // тут должно вывести 'hello, John Smit'
+    </script>
+  </body>
+</html>
