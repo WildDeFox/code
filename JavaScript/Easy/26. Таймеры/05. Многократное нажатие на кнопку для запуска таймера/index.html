@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Многократное нажатие на кнопку для запуска таймера</title>
+</head>
+<body>
+    <button>Начать отсчет</button>
+    <script>
+        let button = document.querySelector('button');
+        button.addEventListener('click', function counter() {
+            let count = 100;
+            setInterval(function(){
+                console.log(count--);
+            }, 1000);
+            this.removeEventListener('click', counter);
+        })
+    </script>
+</body>
+</html>
