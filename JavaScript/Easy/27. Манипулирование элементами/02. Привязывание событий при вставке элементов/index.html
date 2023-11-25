@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Привязывание событий при вставке элементов</title>
+</head>
+<body>
+    <ol class="elem"></ol>
+    <button>Добавить</button>
+    <script>
+        // Дан ol и кнопка. Сделайте так, чтобы по клику на кнопку в конец ol добавлялся тег li.
+        // Сделайте так, чтобы по клику на любой из добавленных li в конец
+        // его текста записывался восклицательный знак.
+        let elem = document.querySelector('.elem');
+        let button = document.querySelector('button');
+
+        button.addEventListener('click', function() {
+            let li = document.createElement('li');
+            li.textContent = 'item';
+            li.addEventListener('click', function() {
+                li.textContent = li.textContent + '!';
+            });
+            elem.appendChild(li);
+        })
+    </script>
+</body>
+</html>

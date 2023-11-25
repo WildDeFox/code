@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Смежная вставка элементов</title>
+</head>
+<body>
+    <div id="elem" style="border: 1px solid red;">
+        <p>text</p>
+        <p>text</p>
+        <p>text</p>
+    </div>
+    <script>
+        let parent = document.querySelector('#elem');
+        let p = document.createElement('p');
+        p.textContent = '!!!';
+
+        // Вставьте перед ним абзац с текстом '!!!'.
+        parent.insertAdjacentElement('beforeBegin', p);
+
+        // Вставьте после него абзац с текстом '!!!'.
+        parent.insertAdjacentElement('afterEnd', p);
+
+        // Вставьте ему в начало абзац с текстом '!!!'.
+        parent.insertAdjacentElement('afterBegin', p);
+
+        // Вставьте ему в конец абзац с текстом '!!!'.
+        parent.insertAdjacentElement('beforeEnd', p);
+    </script>
+</body>
+</html>

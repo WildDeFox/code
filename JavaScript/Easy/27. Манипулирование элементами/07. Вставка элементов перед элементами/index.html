@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вставка элементов перед элементами</title>
+</head>
+<body>
+    <ul id="parent">
+        <li>text</li>
+        <li>text</li>
+        <li id="elem">text</li>
+        <li>text</li>
+        <li>text</li>
+    </ul>
+    <script>
+        let parent = document.querySelector('#parent');
+        let befor = document.querySelector('#elem');
+        let li = document.createElement('li');
+        li.textContent = 'New TEXT';
+        li.addEventListener('click', function() {
+            li.textContent = li.textContent + '!';
+        });
+        parent.insertBefore(li, befor);
+    </script>
+</body>
+</html>

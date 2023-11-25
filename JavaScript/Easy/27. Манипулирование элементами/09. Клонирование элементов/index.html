@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Клонирование элементов</title>
+</head>
+<body>
+    <div class="elem">
+        <input type="text" value="Привет">
+    </div>
+    
+    <button>Скопировать</button>
+    <script>
+        // Дан инпут. Дана кнопка. По нажатию на кнопку клонируйте этот инпут.
+        let input = document.querySelector('input');
+        let elem = document.querySelector('.elem')
+        let button = document.querySelector('button');
+
+        button.addEventListener('click', function() {
+            let clone = input.cloneNode(true);
+            elem.appendChild(clone);
+        })
+    </script>
+</body>
+</html>

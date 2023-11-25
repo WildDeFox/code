@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Навешивание обработчиков в цикле</title>
+</head>
+<body>
+    <div></div>
+    <p></p>
+    <script>
+        // Дан див. Запустите цикл, который добавит в наш див 5 инпутов.
+        // Пусть дан также абзац. Сделайте так, чтобы каждый из новых
+        // инпутов по потери фокуса записывал свой текст в абзац.
+        let div = document.querySelector('div');
+        let elem = document.querySelector('p');
+
+        for (let i = 1; i < 6; i++) {
+            let input = document.createElement('input');
+            input.addEventListener('blur', function() {
+                elem.textContent = input.value;
+            });
+            div.appendChild(input);
+        }
+    </script>
+</body>
+</html>
