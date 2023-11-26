@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Добавление рядов и колонок в HTML таблицу</title>
+  </head>
+  <body>
+    <style>
+      td {
+        width: 50px;
+        height: 50px;
+        border: 1px solid black;
+      }
+    </style>
+
+    <table>
+        <tbody  id="table">
+            <tr>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+              </tr>
+        </tbody>
+    </table>
+
+    <button class="button1">Добавить ряд</button>
+    <button class="button2">Добавить колонку</button>
+
+    <script>
+        let table = document.querySelector('#table');
+        let button1 = document.querySelector('.button1');
+        let button2 = document.querySelector('.button2');
+        button1.addEventListener('click', function() {
+            let tr = document.createElement('tr');
+            for (let i = 0; i < 2; i++) {
+                let td = document.createElement('td');
+                tr.appendChild(td);
+            }
+            table.appendChild(tr);
+        });
+
+        button2.addEventListener('click', function() {
+            let trs = document.querySelectorAll('#table tr');
+
+            for (let tr of trs) {
+                let td = document.createElement('td');
+                tr.appendChild(td);
+            }
+        });
+        
+
+    </script>
+  </body>
+</html>

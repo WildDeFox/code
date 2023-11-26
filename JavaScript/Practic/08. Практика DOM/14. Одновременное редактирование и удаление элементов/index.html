@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Одновременное редактирование и удаление элементов</title>
+</head>
+<body>
+    <div id="parent">
+        <p><span>text1</span></p>
+        <p><span>text2</span></p>
+        <p><span>text3</span></p>
+    </div>
+    <script>
+        let parent = document.querySelector('#parent');
+        let ps = document.querySelectorAll('#parent p');
+        let spans = document.querySelectorAll('#parent p span');
+        
+        for (let p of ps) {
+            let remove = document.createElement('a');
+            remove.textContent = 'remove';
+            remove.href = '#';
+
+            remove.addEventListener('click', function(event) {
+                p.remove();
+                event.preventDefault;
+            })
+
+            p.appendChild(remove);
+        }
+
+        for (let span of spans) {
+            span.addEventListener('click', function func() {
+                let input = document.createElement('input');
+                input.value = span.textContent;
+
+                span.textContent = '';
+                span.appendChild(input);
+
+                input.addEventListener('blur', function() {
+                    span.textContent = input.value;
+                    span.addEventListener('click', func);
+                })
+
+                span.removeEventListener('click', func);
+            })
+        }
+    </script>
+</body>
+</html>

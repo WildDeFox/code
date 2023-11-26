@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Самоудаление новых элементов</title>
+  </head>
+  <body>
+    <ul id="parent">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+    <input type="submit" id="button" />
+    <script>
+      let list = document.querySelector("#parent");
+      let button = document.querySelector("#button");
+
+      button.addEventListener("click", function () {
+        let li = document.createElement("li");
+        li.textContent = "new";
+        list.appendChild(li);
+        let elems = document.querySelectorAll("#parent li");
+        for (let elem of elems) {
+          elem.addEventListener("click", function () {
+            this.remove();
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

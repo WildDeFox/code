@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Последовательное заполнение HTML таблиц</title>
+</head>
+<body>
+    <table></table>
+    <script>
+        // Выведите на экран HTML таблицу размером 5 рядов на 5 колонок так,
+        // чтобы в ее ячейках последовательно стояли числа от 1 до 25.
+        let table = document.querySelector('table');
+        let count = 1;
+
+        for (let i = 0; i < 5; i++) {
+            let tr = document.createElement('tr');
+
+            for (let i = 0; i < 5; i++) {
+                let td = document.createElement('td');
+                td.textContent = count;
+                count++;
+                tr.appendChild(td);
+            }
+            table.appendChild(tr);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редактирование отдельного элемента</title>
+</head>
+<body>
+    <div id="parent">
+        <p id="elem">text</p>
+    </div>
+    <script>
+        let elem = document.querySelector('#elem');
+        let parent = document.querySelector('#parent')
+        
+        elem.addEventListener('click', function() {
+            let input = document.createElement('input');
+            input.value = elem.textContent;
+            parent.appendChild(input);
+
+            input.addEventListener('input', function() {
+                elem.textContent = input.value;
+            });
+
+            input.addEventListener('blur', function() {
+                input.remove();
+            })
+        })
+    </script>
+</body>
+</html>

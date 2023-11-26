@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Создание ссылок для удаление элементов</title>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <script>
+        let lis = document.querySelectorAll('li');
+
+        for (let li of lis) {
+            let remove = document.createElement('a');
+            remove.href = '#';
+            remove.textContent = 'remove';
+            li.appendChild(remove);
+            remove.addEventListener('click', function(event) {
+                li.remove();
+                event.preventDefault;
+            })
+        }
+    </script>
+</body>
+</html>

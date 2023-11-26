@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Создание HTML таблиц</title>
+  </head>
+  <body>
+    <input type="text" class="row" placeholder="Введите кол-во рядов" />
+    <input type="text" class="column" placeholder="Введите кол-во столбцов" />
+    <button>Сгенерировать</button>
+    <table id="table"></table>
+    <script>
+      let table = document.querySelector("#table");
+      let row = document.querySelector(".row");
+      let column = document.querySelector(".column");
+      let button = document.querySelector("button");
+
+      button.addEventListener("click", function () {
+        let rowNum = Number(row.value);
+        let columnNum = Number(column.value);
+
+        for (let i = 0; i < rowNum; i++) {
+          let tr = document.createElement("tr");
+
+          for (let i = 0; i < columnNum; i++) {
+            let td = document.createElement("td");
+            td.textContent = "x";
+            tr.appendChild(td);
+          }
+
+          table.appendChild(tr);
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практика на создание списков ul</title>
+</head>
+<body>
+    <p class="text">Текст элемента: </p>
+    <ul id="elem"></ul>
+    <script>
+        // Дан массив. Вставьте элементы этого массива в конец ul так, чтобы каждый элемент стоял в своем li.
+        // Модифицируйте предыдущую задачу так, чтобы по клику на любой
+        // из вставленных элементов на экран выводился текст этого элемента.
+        let arr = [1, 2, 3, 4, 5, 6];
+        let parent = document.querySelector('#elem');
+        let text = document.querySelector('.text');
+
+        for (let elem of arr) {
+            let li = document.createElement('li');
+            li.textContent = elem;
+            li.addEventListener('click', function() {
+                text.textContent = 'Текст элемента: ';
+                text.textContent = text.textContent + li.textContent;
+            });
+
+            li.addEventListener('click', function addTxt() {
+                this.textContent = this.textContent + '!';
+                li.removeEventListener('click', addTxt);
+            });
+            parent.appendChild(li);
+        }
+    </script>
+</body>
+</html>
