@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Передача порядкового номера в коллбэк</title>
+</head>
+<body>
+    <p class="elem">1</p>
+    <p class="elem">2</p>
+    <p class="elem">3</p>
+
+    <script>
+        function forEach (selector, func) {
+            let elems = document.querySelectorAll(selector);
+
+            for (let i = 0; i < elems.length; i++) {
+                func(elems[i], i);
+            }
+        }
+
+        forEach('.elem', function(elem, index) {
+            elem.textContent = elem.textContent + index;
+        }) 
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Функции для работы с DOM элементом</title>
+</head>
+<body>
+    <p id="text1">Привет Мир</p>
+    <p id="text2">Ещё один привет</p>
+
+    <script>
+        function setText(cl, text) {
+            let elem = document.getElementById(cl);
+            elem.textContent = text;
+        }
+
+        setText('text2', 'Пока МИР');
+
+        // Сделайте функцию setAttr, которая будет менять атрибут DOM элементу.
+        // Пусть первым параметром функция принимает селектор элемента,
+        // вторым - имя атрибута, а третьим - его новое значение.
+        function setAttr(selector, nameAttr, valueAttr) {
+            let elem = document.querySelector(selector);
+
+            elem.setAttribute(nameAttr, valueAttr);
+        }
+        setAttr('#text1', 'name', 'first');
+    </script>
+</body>
+</html>

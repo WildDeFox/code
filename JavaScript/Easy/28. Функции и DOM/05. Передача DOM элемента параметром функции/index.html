@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Передача DOM элемента параметром функции</title>
+  </head>
+  <body>
+    <p class="elem">123</p>
+    <p class="elem">123</p>
+    <script>
+      // Сделайте функцию appendText, которая первым параметром будет принимать DOM элемент,
+      // а вторым - текст. Сделайте так, чтобы данная функция добавляла текст в конец этого элемента.
+      function appendText(elem, text) {
+        elem.textContent = elem.textContent + text;
+      }
+      let elems = document.querySelectorAll('.elem');
+      for (let elem of elems) {
+        appendText(elem, '!');
+      }
+      
+    </script>
+  </body>
+</html>
