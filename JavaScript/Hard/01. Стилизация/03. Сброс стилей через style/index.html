@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сброс стилей через style</title>
+</head>
+<body>
+    <div class="elem">1234567890</div>
+    <button class="show">Показать</button>
+    <button class="visi">Спрятать</button>
+    <script>
+        // Дан див и две кнопки. По клику на первую кнопку спрячьте див, а по клику на вторую - покажите.
+        let show = document.querySelector('.show');
+        let visi = document.querySelector('.visi');
+        let elem = document.querySelector('.elem');
+
+        visi.addEventListener('click', function() {
+            elem.style.display = 'none';
+        });
+
+        show.addEventListener('click', function() {
+            elem.style.display = ''; // Возвращает значение по умолчанию
+        });
+    </script>
+</body>
+</html>

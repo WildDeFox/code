@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Массовая установка стилей</title>
+  </head>
+  <body>
+    <div class="elem"></div>
+    <script>
+      let elem = document.querySelector(".elem");
+    //   elem.style.width = "100px";
+    //   elem.style.height = "100px";
+    //   elem.style.margin = "10px auto";
+    //   elem.style.color = "red";
+      elem.style.cssText = `
+      width: 100px;
+      height: 100px;
+      margin: 10px auto;
+      color: red;
+      `;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Единицы измерения в атрибуте style</title>
+</head>
+<body>
+    <div class="elem" style="border: 1px solid red;"></div>
+    <button>Задать</button>
+    <script>
+        // Дан див и кнопка. По нажатию на кнопку задайте диву ширину в 400px, а высоту в 300px.
+        let elem = document.querySelector('.elem');
+        let button = document.querySelector('button');
+        button.addEventListener('click', function() {
+            elem.style.width = '400px';
+            elem.style.height = '300px';
+        })
+    </script>
+</body>
+</html>

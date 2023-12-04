@@ -1,0 +1,7 @@
+button.active {
+    background-color: green;
+}
+
+button:not(active) {
+    background-color: red;
+}

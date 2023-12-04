@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Распаковка значений CSS свойств</title>
+</head>
+<body>
+    <div id="elem" style="width: 300px; height: 200px; border: 1px solid red;">
+        text
+    </div>
+    <button>Узнать</button>
+    <script>
+        // Дана также кнопка. По клику на кнопку выведите толщину границы, ее тип и цвет.
+        let elem = document.querySelector('#elem');
+        let button = document.querySelector('button');
+
+        button.addEventListener('click', function() {
+            console.log(elem.style.borderWidth);
+            console.log(elem.style.borderStyle);
+            console.log(elem.style.borderColor);
+        })
+    </script>
+</body>
+</html>
