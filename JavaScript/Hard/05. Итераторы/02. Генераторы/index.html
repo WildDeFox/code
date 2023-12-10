@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Генераторы</title>
+  </head>
+  <body>
+    <script>
+      function* func() {
+        yield 5;
+        yield 4;
+        yield 3;
+        yield 2;
+        yield 1;
+      }
+
+      let iter = func();
+      console.log(iter.next());
+      console.log(iter.next());
+      console.log(iter.next());
+      console.log(iter.next());
+      console.log(iter.next());
+    </script>
+  </body>
+</html>
