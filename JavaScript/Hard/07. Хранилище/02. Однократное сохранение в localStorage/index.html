@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Однократное сохранение в localStorage</title>
+</head>
+<body>
+    <input type="text">
+    <script>
+        let input = document.querySelector('input');
+        input.value = localStorage.getItem('text');
+        input.addEventListener('input', function() {
+            localStorage.setItem('text', this.value);
+        })
+    </script>
+</body>
+</html>

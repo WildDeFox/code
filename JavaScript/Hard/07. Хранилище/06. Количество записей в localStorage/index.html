@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Количество записей в localStorage</title>
+</head>
+<body>
+    <p class="elem"></p>
+    <button class="show">Показать</button>
+    <button class="clear">Отчистить</button>
+    <script>
+        // По нажатию на кнопку выведите количество записей в локальном хранилище.
+        let elem = document.querySelector('.elem');
+        let show = document.querySelector('.show');
+        let clear = document.querySelector('.clear');
+
+        show.addEventListener('click', function() {
+            elem.textContent = 'Колличество записей в хранилище: ' + localStorage.length;
+        })
+
+        clear.addEventListener('click', function() {
+            localStorage.clear();
+        })
+    </script>
+</body>
+</html>

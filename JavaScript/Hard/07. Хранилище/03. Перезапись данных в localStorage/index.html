@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Перезапись данных в localStorage</title>
+</head>
+<body>
+    <p></p>
+    <script>
+        let p = document.querySelector('p');
+        
+        let visit = localStorage.getItem('count');
+
+        if(!visit) {
+            let count = 1;
+            localStorage.setItem('count', count);
+        } else {
+            localStorage.setItem('count', Number(localStorage.getItem('count')) + 1);
+        }
+        
+        p.textContent = localStorage.getItem('count');
+        
+    </script>
+</body>
+</html>
