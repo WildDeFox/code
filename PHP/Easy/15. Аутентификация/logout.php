@@ -1,4 +1,4 @@
 <?
 session_start();
-$_SESSION['auth'] = null;
+unset($_SESSION);
 header('Location: login.php');

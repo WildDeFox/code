@@ -1,3 +1,6 @@
+<? session_start();
+    require_once 'connect.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,19 +20,20 @@
     </form>
 
     <? 
-    $host = 'localhost';
-    $user = 'root';
-    $pass = '';
-    $db = 'autentif';
-    $link = mysqli_connect($host, $user, $pass, $db);
-
     if (!empty($_POST['login']) and !empty($_POST['password'])) {
 		$login = $_POST['login'];
 		$password = $_POST['password'];
 		
 		$query = "INSERT INTO users SET login='$login', password='$password'";
 		mysqli_query($link, $query);
-        header('Location: login.php');
+        $_SESSION['auth'] = true;
+        $_SESSION['login'] = $login;
+
+        $id = mysqli_insert_id($link);
+        $_SESSION['id'] = $id;
+
+        header('Location: index.php');
+
     }
     ?>
 </body>

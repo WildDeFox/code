@@ -10,6 +10,7 @@ if (!empty($_SESSION['auth'])): ?>
 </head>
 <body>
     <h1>Привет, <? echo $_SESSION['login']?></h1>
+    <p><? echo $_SESSION['id'] ?></p>
     <p>Вернуться на <a href="index.php">главную</a></p>
 </body>
 </html>

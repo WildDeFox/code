@@ -1,5 +1,6 @@
 <?
 session_start();
+require_once 'connect.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,12 +29,6 @@ session_start();
     ?>
     
     <?
-    $host = 'localhost';
-    $user = 'root';
-    $pass = '';
-    $db = 'autentif';
-    $link = mysqli_connect($host, $user, $pass, $db);
-
     if (!empty($_POST['login']) and !empty($_POST['password'])) {
         $login = $_POST['login'];
         $password = $_POST['password'];
