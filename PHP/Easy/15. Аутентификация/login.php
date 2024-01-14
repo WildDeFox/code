@@ -1,3 +1,6 @@
+<?
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,7 +39,8 @@
         $user = mysqli_fetch_assoc($res);
 
         if (!empty($user)) {
-            echo "Вы усрешно автроризировались";
+            $_SESSION['login'] = 'Вы успешно автроизировались!';
+            header('Location: index.php');
         } else {
             ?>
             <form action="" method="POST">
