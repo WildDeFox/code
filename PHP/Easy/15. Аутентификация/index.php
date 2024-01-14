@@ -1,6 +1,4 @@
-<?
-session_start();
-?>
+<? session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,10 +8,18 @@ session_start();
 </head>
 <body>
     <?php
-    if(isset($_SESSION['login'])) {
-        echo $_SESSION['login'];
-        unset($_SESSION['login']);
+    if (!empty($_SESSION['auth'])) {
+        ?>
+        <a href="test1.php">Страница 1</a>
+        <a href="test2.php">Страница 2</a>
+        <?
+    } else {
+        ?>
+        <p>Чтобы увидеть весть контент, пожалуйста,<a href="login.php">авторизируйтесь</a> на сайте.</p>
+        <?
     }
     ?>
+    
 </body>
 </html>
+

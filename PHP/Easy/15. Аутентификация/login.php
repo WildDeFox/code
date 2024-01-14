@@ -39,7 +39,8 @@ session_start();
         $user = mysqli_fetch_assoc($res);
 
         if (!empty($user)) {
-            $_SESSION['login'] = 'Вы успешно автроизировались!';
+            $_SESSION['login'] = $login;
+            $_SESSION['auth'] = true;
             header('Location: index.php');
         } else {
             ?>
