@@ -14,11 +14,15 @@ session_start();
     if (empty($_POST)) {
     ?>
         <form action="" method="POST">
-            <input type="text" name="login">
-            <input type="num" name="password">
+                <p>Пожалуйста авторизируйтесь на сайте</p>
+                <label>Введите ваш логин</label>
+                <input type="text" name="login">
+                <label>Введите ваш пароль</label>
+                <input type="num" name="password">
 
-            <input type="submit">
-        </form>
+                <input type="submit">
+            </form>
+            <p>Или же <a href="register.php">зарегестрируйтесь</a> на сайте</p>
     <?
     }
     ?>
@@ -45,11 +49,15 @@ session_start();
         } else {
             ?>
             <form action="" method="POST">
+                <p>Пожалуйста авторизируйтесь на сайте</p>
+                <label>Введите ваш логин</label>
                 <input type="text" name="login">
+                <label>Введите ваш пароль</label>
                 <input type="num" name="password">
 
                 <input type="submit">
             </form>
+            <p>Или же <a href="register.php">зарегестрируйтесь</a> на сайте</p>
             <?
             echo "Неверный логин или пароль";
         }
