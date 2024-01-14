@@ -7,11 +7,10 @@
     <title>Сайт</title>
 </head>
 <body>
-    <?php
-    if (!empty($_SESSION['auth'])) {
-        ?>
+    <? if (!empty($_SESSION['auth'])) { ?>
         <a href="test1.php">Страница 1</a>
         <a href="test2.php">Страница 2</a>
+        <a href="logout.php">Выйти из аккаунта</a>
         <?
     } else {
         ?>
