@@ -31,16 +31,22 @@ require_once 'connect.php';
     <?
     if (!empty($_POST['login']) and !empty($_POST['password'])) {
         $login = $_POST['login'];
-        $password = md5($_POST['password']);
 
-        $query = "SELECT * FROM users WHERE login='$login' AND password='$password'";
+        $query = "SELECT * FROM users WHERE login='$login'";
         $res = mysqli_query($link, $query);
         $user = mysqli_fetch_assoc($res);
 
         if (!empty($user)) {
-            $_SESSION['login'] = $login;
-            $_SESSION['auth'] = true;
-            header('Location: index.php');
+            $hash = $user['password']; // соленый пароль из БД
+
+            if (password_verify($_POST['password'], $hash)) {
+                $_SESSION['login'] = $login;
+                $_SESSION['auth'] = true;
+                header('Location: index.php');
+            } else {
+                echo 'Пароль не верый!';
+            }
+            
         } else {
             ?>
             <form action="" method="POST">
